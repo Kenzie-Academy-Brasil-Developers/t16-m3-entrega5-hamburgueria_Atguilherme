@@ -1,14 +1,14 @@
-import styled, { css } from 'styled-components';
-import BaseTitle from './components/BaseTitle';
+import styled, { css } from "styled-components";
+import BaseTitle from "./components/BaseTitle";
 
 interface IStyledTitleProps {
-  $fontSize: 'one' | 'two' | 'three' | 'four';
-  textAlign?: 'center' | 'left' | 'right';
+  $fontSize: "one" | "two" | "three" | "four";
+  textAlign?: "center" | "left" | "right";
 }
 
 interface IStyledParagraphProps {
-  fontColor?: 'gray' | 'red';
-  textAlign?: 'center' | 'left' | 'right';
+  fontColor?: "gray" | "red";
+  textAlign?: "center" | "left" | "right";
 }
 
 export const StyledTitle = styled(BaseTitle)<IStyledTitleProps>`
@@ -21,24 +21,24 @@ export const StyledTitle = styled(BaseTitle)<IStyledTitleProps>`
 
   ${({ $fontSize }) => {
     switch ($fontSize) {
-      case 'one':
+      case "one":
         return css`
           font-size: 1.55rem;
           font-weight: 700;
         `;
-      case 'two':
+      case "two":
         return css`
           font-size: 1.35rem;
           font-weight: 700;
         `;
 
-      case 'three':
+      case "three":
         return css`
           font-size: 1.15rem;
           font-weight: 700;
         `;
 
-      case 'four':
+      case "four":
       default:
         return css`
           font-size: 1rem;
@@ -53,16 +53,17 @@ export const StyledParagraph = styled.p<IStyledParagraphProps>`
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.8;
+  margin-top: 10px;
 
   text-align: ${({ textAlign }) => textAlign};
 
   ${({ fontColor, theme }) => {
     switch (fontColor) {
-      case 'gray':
+      case "gray":
         return css`
           color: ${theme.colors.gray300};
         `;
-      case 'red':
+      case "red":
         return css`
           color: ${theme.colors.feedback.negative};
         `;
